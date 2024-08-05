@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="identify_service" />
         <module name="notify_service" />
+        <module name="api_gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api_gateway" options="-parameters" />
       <module name="identify_service" options="-parameters" />
       <module name="notify_service" options="-parameters" />
       <module name="project_SB" options="-parameters" />

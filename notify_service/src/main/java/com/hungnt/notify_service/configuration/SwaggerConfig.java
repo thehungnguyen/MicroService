@@ -1,4 +1,4 @@
-package com.hungnt.identify_service.configuration;
+package com.hungnt.notify_service.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -19,33 +19,21 @@ public class SwaggerConfig {
         return new OpenAPI()
                 // Thông tin chi tiết cho API
                 .info(new Info()
-                        .title("API Identity Service Document")
+                        .title("API Notify Service Document")
                         .version("v1.0")
                         .description("API Service")
                 )
                 // Server có thể truy cập
                 .servers(List.of(
-                        new Server().url("http://localhost:8888").description("Local Server")
-                ))
-                // Thiết lập bảo mật cho API
-                .components(
-                        new Components().addSecuritySchemes(
-                                        "bearerAuth", new SecurityScheme()
-                                                .type(SecurityScheme.Type.HTTP)
-                                                .scheme("bearer")
-                                                .bearerFormat("JWT")
-                        )
-                )
-                .security(List.of(
-                        new SecurityRequirement().addList("bearerAuth")
+                        new Server().url("http://localhost:8889").description("Local Server")
                 ));
     }
 
     @Bean
     public GroupedOpenApi groupedOpenApi(){
         return GroupedOpenApi.builder()
-                .group("API Group 1")
-                .packagesToScan("com.hungnt.identify_service.controller")
+                .group("API Group 2")
+                .packagesToScan("com.hungnt.notify_service.controller")
                 .build();
     }
 }

@@ -1,6 +1,13 @@
 server:
   port: 8889
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-doc:
+    path: /api-doc
+  show-actuator: true
+
 spring:
   mail:
     host: smtp.gmail.com
@@ -9,7 +16,6 @@ spring:
     password: nisdeiphottbqdlj
     protocol: smtp
     isSSL: false
-
   kafka:
     bootstrap-servers: localhost:9094
     consumer:
