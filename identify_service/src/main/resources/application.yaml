@@ -5,6 +5,8 @@ jwt:
 
 server:
   port: 8888
+  servlet:
+    context-path: /identity
 
 springdoc:
   swagger-ui:
@@ -14,6 +16,9 @@ springdoc:
   show-actuator: true
 
 spring:
+  application:
+    name: identity-service
+
   datasource:
     url: "jdbc:mysql://localhost:3306/manager_service"
     username: root
